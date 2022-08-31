@@ -21,6 +21,8 @@ builder.Services.AddDbContext<ApplicationDbContext>(options =>
 builder.Services.AddDatabaseDeveloperPageExceptionFilter();
 builder.Services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.RequireConfirmedAccount = true)
     .AddEntityFrameworkStores<ApplicationDbContext>();
+builder.Services.AddDbContext<IdentityTutorialContext>(opt =>
+                opt.UseMySql(builder.Configuration.GetConnectionString("connection"), serverVersion));
 //builder.Services.AddIdentity<ApplicationUser, IdentityRole>(options =>
 //        options.SignIn.RequireConfirmedAccount = true)
 //        .AddEntityFrameworkStores<ApplicationDbContext>()

@@ -11,6 +11,6 @@ namespace IdentityTutorial.Data
         {
             
         }
-        public DbSet<SuperHero> SuperHeroes => Set<SuperHero>();
+        
     }
 }
